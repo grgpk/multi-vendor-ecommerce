@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom/client";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+
+import "./index.css";
 
 const App = lazy(() => import("./App"));
 
@@ -9,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <App />
+    <Suspense>
+      <App />
+    </Suspense>
   </BrowserRouter>
 );
 
